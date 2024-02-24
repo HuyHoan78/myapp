@@ -1,0 +1,696 @@
+<!-- PHẦN -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- hàng -->
+        <div class="row">
+            <!-- cửa hàng -->
+            <div class="col-md-4 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="/assets/img/shop01.png" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h3>Bộ Sưu Tập<br>Laptop</h3>
+                        <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- /cửa hàng -->
+
+            <!-- cửa hàng -->
+            <div class="col-md-4 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="/assets/img/shop03.png" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h3>Bộ Sưu Tập<br>Phụ Kiện</h3>
+                        <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- /cửa hàng -->
+
+            <!-- cửa hàng -->
+            <div class="col-md-4 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="/assets/img/shop02.png" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h3>Bộ Sưu Tập<br>Máy Ảnh</h3>
+                        <a href="#" class="cta-btn">Mua ngay <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- /cửa hàng -->
+        </div>
+        <!-- /hàng -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /PHẦN -->
+<!-- PHẦN -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- hàng -->
+        <div class="row">
+
+            <!-- tiêu đề của phần -->
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">Sản Phẩm </h3>
+                    <div class="section-nav">
+                        <ul class="section-tab-nav tab-nav">
+                            <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
+                            <li><a data-toggle="tab" href="#tab1">Điện Thoại Thông Minh</a></li>
+                            <li><a data-toggle="tab" href="#tab1">Máy Ảnh</a></li>
+                            <li><a data-toggle="tab" href="#tab1">Phụ Kiện</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /tiêu đề của phần -->
+
+            <!-- Tab Sản Phẩm & Slick -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-1">
+                                <!-- sản phẩm -->
+                                <!-- @for (item of Products; track item.id) { -->
+                                <!-- style="margin: 14px; width: 263px; float: left;max-height: 450px;" -->
+                                <div class="product" *ngFor="let item of Products">
+                                    <div class="product-img">
+                                        <img src="http://localhost:3000//home/imgs/products/{{item.AnhDaiDien}}" alt="">
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Danh Mục</p>
+                                        <h3 class="product-name"><a [routerLink]="['/product-detail', item.id]">{{item.TenSanPham}}</a></h3>
+                                        <h4 class="product-price"><a href="#">{{item.GiaBan | currency:'VND':'symbol':'1.0-0'}} VND</a></h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">thêm vào danh sách mong muốn</span></button>
+                                            <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">thêm vào so sánh</span></button>
+                                            <button class="view-product-detail" [routerLink]="['/product-detail', item.id]"><i class="fa fa-eye"></i> </button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn" (click)="addCart(item)"><i class="fa fa-shopping-cart"></i> thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                                <!-- /sản phẩm -->
+
+                            </div>
+                            <div id="slick-nav-1" class="products-slick-nav"></div>
+                        </div>
+                        <!-- /tab -->
+                    </div>
+                </div>
+            </div>
+            <!-- Tab Sản Phẩm & Slick -->
+        </div>
+        <!-- /hàng -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /PHẦN -->
+
+<!-- PHẦN KHUYẾN MÃI NỔI BẬT -->
+<div id="hot-deal" class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- hàng -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hot-deal">
+                    <ul class="hot-deal-countdown">
+                        <li>
+                            <div>
+                                <h3>02</h3>
+                                <span>Ngày</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>10</h3>
+                                <span>Giờ</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>34</h3>
+                                <span>Phút</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>60</h3>
+                                <span>Giây</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <h2 class="text-uppercase">Ưu đãi nổi bật tuần này</h2>
+                    <p>Bộ Sưu Tập Mới Giảm Giá Đến 50%</p>
+                    <a class="primary-btn cta-btn" href="#">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+        <!-- /hàng -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /PHẦN KHUYẾN MÃI NỔI BẬT -->
+
+
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+
+            <!-- section title -->
+
+            <!-- section title -->
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">Bán chạy nhất</h3>
+                    <div class="section-nav">
+                        <ul class="section-tab-nav tab-nav">
+                            <li class="active"><a data-toggle="tab" href="#tab2">Laptop</a></li>
+                            <li><a data-toggle="tab" href="#tab2">Điện thoại thông minh</a></li>
+                            <li><a data-toggle="tab" href="#tab2">Máy ảnh</a></li>
+                            <li><a data-toggle="tab" href="#tab2">Phụ kiện</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /section title -->
+
+            <!-- Products tab & slick -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab2" class="tab-pane fade in active">
+                            <div class="products-slick" data-nav="#slick-nav-2">
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="/assets/img/product06.png" alt="">
+                                        <div class="product-label">
+                                            <span class="sale">-30%</span>
+                                            <span class="new">MỚI</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Danh mục</p>
+                                        <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">thêm vào danh sách mong muốn</span></button>
+                                            <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">thêm vào so sánh</span></button>
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">xem nhanh</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="/assets/img/product07.png" alt="">
+                                        <div class="product-label">
+                                            <span class="new">MỚI</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Danh mục</p>
+                                        <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">thêm vào danh sách mong muốn</span></button>
+                                            <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">thêm vào so sánh</span></button>
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">xem nhanh</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="/assets/img/product08.png" alt="">
+                                        <div class="product-label">
+                                            <span class="sale">-30%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Danh mục</p>
+                                        <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                        <div class="product-rating">
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">thêm vào danh sách mong muốn</span></button>
+                                            <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">thêm vào so sánh</span></button>
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">xem nhanh</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="/assets/img/product09.png" alt="">
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Danh mục</p>
+                                        <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">thêm vào danh sách mong muốn</span></button>
+                                            <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">thêm vào so sánh</span></button>
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">xem nhanh</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="/assets/img/product01.png" alt="">
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Danh mục</p>
+                                        <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">thêm vào danh sách mong muốn</span></button>
+                                            <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">thêm vào so sánh</span></button>
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">xem nhanh</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+                            </div>
+                            <div id="slick-nav-2" class="products-slick-nav">
+                            </div>
+
+                            <!-- /tab -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /Products tab & slick -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-4 col-xs-6">
+                    <div class="section-title">
+                        <h4 class="title">Sản phẩm bán chạy nhất</h4>
+                        <div class="section-nav">
+                            <div id="slick-nav-3" class="products-slick-nav"></div>
+                        </div>
+                    </div>
+                    <!-- Widget sản phẩm -->
+                    <div class="products-widget-slick" data-nav="#slick-nav-3">
+                        <div>
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product07.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product08.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product09.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- product widget -->
+                        </div>
+
+                        <div>
+                            <!-- product widget -->
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product01.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product02.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product03.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- product widget -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xs-6">
+                    <div class="section-title">
+                        <h4 class="title">Bán chạy nhất</h4>
+                        <div class="section-nav">
+                            <div id="slick-nav-4" class="products-slick-nav"></div>
+                        </div>
+                    </div>
+
+                    <div class="products-widget-slick" data-nav="#slick-nav-4">
+                        <div>
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product04.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product05.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product06.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- Widget sản phẩm -->
+                        </div>
+
+                        <div>
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product07.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product08.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product09.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- product widget -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix visible-sm visible-xs"></div>
+
+                <div class="col-md-4 col-xs-6">
+                    <div class="section-title">
+                        <h4 class="title">Bán chạy nhất</h4>
+                        <div class="section-nav">
+                            <div id="slick-nav-5" class="products-slick-nav"></div>
+                        </div>
+                    </div>
+
+                    <div class="products-widget-slick" data-nav="#slick-nav-5">
+                        <div>
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product01.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product02.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product03.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- Widget sản phẩm -->
+                        </div>
+
+                        <div>
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product04.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product05.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- /Widget sản phẩm -->
+
+                            <!-- Widget sản phẩm -->
+                            <div class="product-widget">
+                                <div class="product-img">
+                                    <img src="/assets/img/product06.png" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <p class="product-category">Danh mục</p>
+                                    <h3 class="product-name"><a href="#">Tên sản phẩm ở đây</a></h3>
+                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                </div>
+                            </div>
+                            <!-- product widget -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /row -->
+            <!-- /NEWSLETTER -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+
+    <!-- NEWSLETTER -->
+    <div id="newsletter" class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <<div class="col-md-12">
+                <div class="newsletter">
+                    <p>Đăng Ký Nhận <strong>THÔNG BÁO</strong></p>
+                    <form>
+                        <input class="input" type="email" placeholder="Nhập Email Của Bạn">
+                        <button class="newsletter-btn"><i class="fa fa-envelope"></i> Đăng Ký</button>
+                    </form>
+                    <ul class="newsletter-follow">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /NEWSLETTER -->

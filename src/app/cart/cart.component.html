@@ -1,0 +1,29 @@
+<div class="cart-container">
+    <div class="cart-row">
+        <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+        <span class="cart-quantity cart-header cart-column">Giá Bán</span>
+        <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+        <span class="cart-quantity cart-header cart-column">Tổng</span>
+    </div>
+    <div class="cart-row" *ngFor="let item of items">
+        <!-- Hiển thị thông tin sản phẩm trong giỏ hàng -->
+        <div class="cart-item cart-column">
+            <img height="150px" src="http://localhost:3000//home/imgs/products/{{item.imageUrl}}" alt="">
+            <p class="item-name">{{item.name}}</p>
+        </div>
+        <span class="cart-price cart-column">{{ item.price | number}}</span>
+        <div class="cart-quantity cart-column">
+            <p>{{item.quantity}}</p>
+            <button (click)="decreaseQuantity(item)">-</button>
+            <button (click)="increaseQuantity(item)">+</button>
+        </div>
+        <span class="cart-subtotal cart-column">{{ item.price*item.quantity | number}}</span>
+        <button class="remove-btn" (click)="removeItem(item)">Xóa</button>
+    </div>
+    <div class="cart-total">
+        <!-- Hiển thị tổng cộng -->
+        <strong class="cart-total-title">Tổng Cộng:</strong>
+        <span class="cart-total-price">{{totalPice | number}} VNĐ</span>
+        <button class="buy-btn" (click)="buyItems()">Mua Hàng</button>
+    </div>
+</div>

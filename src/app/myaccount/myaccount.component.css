@@ -1,0 +1,36 @@
+.center-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.order-details {
+    width: 400px;
+    /* Tăng chiều rộng mong muốn */
+    height: 300px;
+    /* Tăng chiều cao mong muốn */
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* background: url('path/to/eye-icon.png') no-repeat; */
+    width: 20px;
+    height: 20px;
+}
+
+#passwordInput {
+    padding-right: 30px;
+    /* Để không che khuất biểu tượng con mắt */
+}
